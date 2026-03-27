@@ -1,6 +1,6 @@
 /**
- * SCIENFORM V2 - SCRIPT.JS
- * Complete bug-free logic with detailed Science content (2nde & 1ere).
+ * SCIENFORM V2.1 - SCRIPT.JS
+ * Updated with Optique and advanced Chemistry for 1ère.
  */
 
 const formulas = [
@@ -11,21 +11,10 @@ const formulas = [
         subject: "physique",
         level: "2nde",
         formula: "P = m \\times g",
-        definition: "Force d'attraction gravitationnelle exercée par la Terre sur tout objet massique à son voisinage.",
-        properties: "Le poids est un vecteur vertical vers le bas. g ≈ 9,81 N/kg sur Terre. Dépend du lieu (astre).",
+        definition: "Force d'attraction exercée par la Terre (ou un astre) sur un objet massique situé à son voisinage.",
+        properties: "Direction : verticale. Sens : vers le bas. Point d'application : centre de gravité. g ≈ 9,81 N/kg sur Terre.",
         units: "P(N), m(kg), g(N/kg).",
         tags: ["gravité", "mécanique"]
-    },
-    {
-        id: "vitesse-2",
-        title: "Vitesse moyenne",
-        subject: "physique",
-        level: "2nde",
-        formula: "v = \\frac{d}{\\Delta t}",
-        definition: "Rapport de la distance parcourue sur la durée du trajet.",
-        properties: "Vitesse constante si le mouvement est uniforme. 1 m/s = 3,6 km/h.",
-        units: "v(m/s), d(m), Δt(s).",
-        tags: ["cinématique", "mouvement"]
     },
     {
         id: "frequence-2",
@@ -33,10 +22,10 @@ const formulas = [
         subject: "physique",
         level: "2nde",
         formula: "f = \\frac{1}{T}",
-        definition: "Nombre de fois qu'un phénomène périodique se reproduit par seconde.",
-        properties: "Le Herz (Hz) est l'unité de fréquence. T est la durée d'un motif élémentaire.",
+        definition: "La période T est la durée d'un motif élémentaire. La fréquence f est le nombre de motifs par seconde.",
+        properties: "Plus la période est courte, plus la fréquence est élevée (son plus aigu par exemple).",
         units: "f(Hz), T(s).",
-        tags: ["ondes", "périodique"]
+        tags: ["ondes", "son"]
     },
     {
         id: "snell-2",
@@ -44,9 +33,9 @@ const formulas = [
         subject: "physique",
         level: "2nde",
         formula: "n_1 \\times \\sin(i_1) = n_2 \\times \\sin(i_2)",
-        definition: "Loi décrivant le changement de direction de la lumière passant d'un milieu à un autre.",
-        properties: "n est l'indice de réfraction (n air ≈ 1). i1 angle d'incidence, i2 angle de réfraction.",
-        units: "n(sans unité), i(degrés ou radians).",
+        definition: "Relation entre les indices de réfraction n et les angles d'incidence/réfraction lors du passage de la lumière entre deux milieux.",
+        properties: "L'indice n de l'air est pris égal à 1,00. L'angle de réfraction i2 dépend de la nature des deux milieux.",
+        units: "n (sans unité), angles en degrés.",
         tags: ["optique", "lumière"]
     },
 
@@ -57,32 +46,43 @@ const formulas = [
         subject: "chimie",
         level: "2nde",
         formula: "\\rho = \\frac{m}{V}",
-        definition: "Grandeur physique qui définit la masse d'une substance par unité de volume.",
-        properties: "Permet d'identifier une espèce chimique pure. Dépend de la température.",
+        definition: "Masse d'une substance contenue dans une unité de volume donnée.",
+        properties: "Permet de différencier des espèces chimiques (ex: eau = 1000 g/L). Ne pas confondre avec la densité.",
         units: "ρ(kg/m³ ou g/L), m(kg ou g), V(m³ ou L).",
         tags: ["matière", "identification"]
     },
-    {
-        id: "conc-mass-2",
-        title: "Concentration massique",
-        subject: "chimie",
-        level: "2nde",
-        formula: "C_m = \\frac{m_{soluté}}{V_{solution}}",
-        definition: "Masse de soluté dissoute dans un litre de solution.",
-        properties: "Aussi appelée titre massique. À ne pas confondre avec la masse volumique.",
-        units: "Cm(g/L), m(g), V(L).",
-        tags: ["solutions", "soluté"]
-    },
 
     // --- PREMIÈRE PHYSIQUE ---
+    {
+        id: "optique-conjugaison-1",
+        title: "Relation de conjugaison",
+        subject: "physique",
+        level: "1ere",
+        formula: "\\frac{1}{\\overline{OA'}} - \\frac{1}{\\overline{OA}} = \\frac{1}{f'} = V",
+        definition: "Lien entre la position de l'objet (A), la position de l'image (A') et la focale de la lentille (f').",
+        properties: "Utilise des mesures algébriques (positives dans le sens de la lumière). f' est la distance focale.",
+        units: "Mesures en mètres (m), V en Dioptries (δ).",
+        tags: ["optique", "lentilles"]
+    },
+    {
+        id: "optique-vergence-1",
+        title: "Vergence d'une lentille",
+        subject: "physique",
+        level: "1ere",
+        formula: "V = \\frac{1}{f'}",
+        definition: "Capacité d'une lentille convergente à dévier les rayons lumineux vers son foyer.",
+        properties: "Plus f' est petit, plus la lentille est bombée et plus sa vergence V est grande.",
+        units: "V en Dioptries (δ), f' en mètres (m).",
+        tags: ["optique", "vision"]
+    },
     {
         id: "ec-1",
         title: "Énergie cinétique",
         subject: "physique",
         level: "1ere",
         formula: "E_c = \\frac{1}{2} m v^2",
-        definition: "Énergie que possède un corps du fait de sa vitesse par rapport à un référentiel.",
-        properties: "Toujours positive. Double si la masse double, mais quadruple si la vitesse double.",
+        definition: "Énergie liée au mouvement d'un système. Elle dépend de sa masse et de sa vitesse.",
+        properties: "Proportionnelle au carré du vecteur vitesse. Si la vitesse double, Ec est multipliée par 4.",
         units: "Ec(Joules), m(kg), v(m/s).",
         tags: ["énergie", "mouvement"]
     },
@@ -92,45 +92,56 @@ const formulas = [
         subject: "physique",
         level: "1ere",
         formula: "E_{pp} = m \\times g \\times z",
-        definition: "Énergie liée à la position d'un objet (altitude z) dans un champ de pesanteur.",
-        properties: "Dépend du choix de l'origine de l'altitude (z=0).",
+        definition: "Énergie liée à l'altitude z d'un objet dans le champ de pesanteur terrestre.",
+        properties: "On choisit souvent l'origine des altitudes au niveau du sol (z = 0).",
         units: "Epp(Joules), m(kg), z(m).",
         tags: ["énergie", "gravité"]
-    },
-    {
-        id: "ohm-1",
-        title: "Loi d'Ohm",
-        subject: "physique",
-        level: "1ere",
-        formula: "U = R \\times I",
-        definition: "Tension aux bornes d'un conducteur ohmique proportionnelle à l'intensité.",
-        properties: "R est la résistance du dipôle. Dissipe l'énergie sous forme de chaleur (Effet Joule).",
-        units: "U(V), R(Ω), I(A).",
-        tags: ["électricité", "tension"]
     },
 
     // --- PREMIÈRE CHIMIE ---
     {
         id: "mole-1",
-        title: "Quantité de matière (Mole)",
+        title: "Quantité de matière",
         subject: "chimie",
         level: "1ere",
         formula: "n = \\frac{m}{M}",
-        definition: "Quantité de matière contenue dans une masse m d'une espèce chimique.",
-        properties: "M est la masse molaire (dépend de la formule brute). N = n * Na.",
+        definition: "Nombre de moles contenues dans une masse m d'une espèce chimique de masse molaire M.",
+        properties: "La mole (mol) est l'unité de base pour compter les atomes ou molécules.",
         units: "n(mol), m(g), M(g/mol).",
         tags: ["mole", "atome"]
     },
     {
-        id: "conc-mol-1",
-        title: "Concentration molaire",
+        id: "dilution-1",
+        title: "Formule de la dilution",
         subject: "chimie",
         level: "1ere",
-        formula: "C = \\frac{n}{V}",
-        definition: "Nombre de moles de soluté dissoutes par litre de solution.",
-        properties: "Lien avec Cm : Cm = C * M.",
-        units: "C(mol/L), n(mol), V(L).",
-        tags: ["solutions", "mole"]
+        formula: "C_i \\times V_i = C_f \\times V_f",
+        definition: "Conservation de la quantité de matière lors de l'ajout d'un solvant.",
+        properties: "i = initial (mère), f = final (fille). On a toujours Ci > Cf et Vi < Vf.",
+        units: "C(mol/L), V(L ou mL).",
+        tags: ["solutions", "préparation"]
+    },
+    {
+        id: "facteur-dilution-1",
+        title: "Facteur de dilution",
+        subject: "chimie",
+        level: "1ere",
+        formula: "F = \\frac{C_i}{C_f} = \\frac{V_f}{V_i}",
+        definition: "Nombre de fois qu'une solution a été diluée.",
+        properties: "F est toujours supérieur à 1. Par exemple, si F = 10, on a dilué 10 fois.",
+        units: "F (sans unité).",
+        tags: ["solutions", "test"]
+    },
+    {
+        id: "equivalence-1",
+        title: "Équivalence au titrage",
+        subject: "chimie",
+        level: "1ere",
+        formula: "\\frac{n_A}{a} = \\frac{n_{versé}}{b}",
+        definition: "État caractéristique d'un titrage où les réactifs ont été introduits dans des proportions stoechiométriques.",
+        properties: "À l'équivalence, il y a un changement de couleur (titrage colorimétrique) ou un saut de pH.",
+        units: "n en moles (mol).",
+        tags: ["dosage", "titrage"]
     },
     {
         id: "beer-1",
@@ -138,10 +149,10 @@ const formulas = [
         subject: "chimie",
         level: "1ere",
         formula: "A = \\epsilon \\times l \\times C",
-        definition: "Lien entre l'absorbance A et la concentration C d'une solution colorée.",
-        properties: "A est sans unité. Valable pour des solutions diluées et une lumière monochromatique.",
-        units: "A, ε(L/mol/cm), l(cm), C(mol/L).",
-        tags: ["colorimétrie", "dosage"]
+        definition: "L'absorbance A est proportionnelle à la concentration C de l'espèce colorée.",
+        properties: "Utile pour doser une solution colorée sans la détruire (spectrophotométrie).",
+        units: "A (sans unité), ε(L/mol/cm), l(cm), C(mol/L).",
+        tags: ["dosage", "lumière"]
     }
 ];
 
@@ -215,7 +226,6 @@ function openModal(f) {
     modalProp.textContent = f.properties;
     mathBox.innerHTML = `\\[ ${f.formula} \\]`;
     
-    // Reset tabs
     switchTab('eqn');
     
     modalOverlay.style.display = 'flex';
