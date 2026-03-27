@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ScienForm - Seconde & Première</title>
+    <meta name="description" content="Toutes les définitions et formules de physique-chimie pour les élèves de Seconde et Première.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <div class="header-inner">
+                <div class="brand">
+                    <div class="icon-circle"><i data-lucide="flask-conical"></i></div>
+                    <span>ScienForm</span>
+                </div>
+                <div class="search-wrap">
+                    <i data-lucide="search"></i>
+                    <input type="text" id="main-search" placeholder="Réviser une formule ou un concept...">
+                </div>
+            </div>
+            
+            <div class="filter-bar">
+                <div class="level-selectors">
+                    <button class="level-chip active" data-level="all">Tous</button>
+                    <button class="level-chip" data-level="2nde">Seconde</button>
+                    <button class="level-chip" data-level="1ere">Première</button>
+                </div>
+                <div class="subject-selectors">
+                    <button class="subject-chip active" data-subject="all">Totalité</button>
+                    <button class="subject-chip" data-subject="physique">Physique</button>
+                    <button class="subject-chip" data-subject="chimie">Chimie</button>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <div id="no-results" class="hidden">Aucun résultat trouvé...</div>
+            <div class="grid-container" id="formula-list">
+                <!-- Data will go here -->
+                <div class="skeleton-card"></div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Modal for Detailed View -->
+    <div id="modal-overlay" class="modal-overlay">
+        <div class="modal-window glass">
+            <button class="modal-close"><i data-lucide="x"></i></button>
+            <div class="modal-header">
+                <span class="modal-badge" id="modal-tag">PHYSIQUE</span>
+                <h2 id="modal-title">Titre de la formule</h2>
+            </div>
+            
+            <div class="modal-tabs">
+                <button class="tab-trigger active" data-tab="eqn">Formule</button>
+                <button class="tab-trigger" data-tab="def">Définition</button>
+                <button class="tab-trigger" data-tab="prop">Propriétés</button>
+            </div>
+            
+            <div class="modal-body-content">
+                <div class="tab-panel active" id="tab-eqn">
+                    <div class="math-display" id="math-box">\[ P = m \times g \]</div>
+                    <div class="units-legend">
+                        <h4>Unités & Symboles :</h4>
+                        <p id="modal-units">P(N), m(kg), g(9.81 N/kg)</p>
+                    </div>
+                </div>
+                <div class="tab-panel" id="tab-def">
+                    <p id="modal-def">La définition apparaîtra ici...</p>
+                </div>
+                <div class="tab-panel" id="tab-prop">
+                    <p id="modal-prop">Les propriétés apparaîtront ici...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Créé pour les élèves de Seconde et Première. Bonne révisions !</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>lucide.createIcons();</script>
+</body>
+</html>
