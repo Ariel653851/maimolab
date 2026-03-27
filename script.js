@@ -1,6 +1,6 @@
 /**
- * SCIENFORM V2.1 - SCRIPT.JS
- * Updated with Optique and advanced Chemistry for 1ère.
+ * SCIENFORM V2.2 - SCRIPT.JS
+ * THE ULTIMATE VERSION - EVERYTHING INCLUDED (2NDE & 1ERE)
  */
 
 const formulas = [
@@ -11,10 +11,21 @@ const formulas = [
         subject: "physique",
         level: "2nde",
         formula: "P = m \\times g",
-        definition: "Force d'attraction exercée par la Terre (ou un astre) sur un objet massique situé à son voisinage.",
-        properties: "Direction : verticale. Sens : vers le bas. Point d'application : centre de gravité. g ≈ 9,81 N/kg sur Terre.",
+        definition: "Force d'attraction gravitationnelle exercée par la Terre sur tout objet possédant une masse.",
+        properties: "Direction : verticale. Sens : vers le centre de la Terre (bas). g ≈ 9,81 N/kg.",
         units: "P(N), m(kg), g(N/kg).",
         tags: ["gravité", "mécanique"]
+    },
+    {
+        id: "vitesse-2",
+        title: "Vitesse moyenne",
+        subject: "physique",
+        level: "2nde",
+        formula: "v = \\frac{d}{\\Delta t}",
+        definition: "Rapport de la distance parcourue sur le temps nécessaire pour la parcourir.",
+        properties: "Mouvement uniforme si la vitesse est constante. Conversion : 1 m/s = 3,6 km/h.",
+        units: "v(m/s), d(m), Δt(s).",
+        tags: ["cinématique", "mouvement"]
     },
     {
         id: "frequence-2",
@@ -22,10 +33,10 @@ const formulas = [
         subject: "physique",
         level: "2nde",
         formula: "f = \\frac{1}{T}",
-        definition: "La période T est la durée d'un motif élémentaire. La fréquence f est le nombre de motifs par seconde.",
-        properties: "Plus la période est courte, plus la fréquence est élevée (son plus aigu par exemple).",
-        units: "f(Hz), T(s).",
-        tags: ["ondes", "son"]
+        definition: "Nombre de fois qu'un phénomène périodique (comme un signal sonore) se répète par seconde.",
+        properties: "T est la période (la durée d'un motif). Plus f est grand, plus le son est aigu.",
+        units: "f(Hertz - Hz), T(secondes - s).",
+        tags: ["ondes", "signal"]
     },
     {
         id: "snell-2",
@@ -33,10 +44,10 @@ const formulas = [
         subject: "physique",
         level: "2nde",
         formula: "n_1 \\times \\sin(i_1) = n_2 \\times \\sin(i_2)",
-        definition: "Relation entre les indices de réfraction n et les angles d'incidence/réfraction lors du passage de la lumière entre deux milieux.",
-        properties: "L'indice n de l'air est pris égal à 1,00. L'angle de réfraction i2 dépend de la nature des deux milieux.",
-        units: "n (sans unité), angles en degrés.",
-        tags: ["optique", "lumière"]
+        definition: "Décrit comment la lumière est déviée lorsqu'elle change de milieu transparent.",
+        properties: "i1 est l'angle d'incidence, i2 l'angle de réfraction. n est l'indice de réfraction du milieu.",
+        units: "n(sans unité), angles en degrés.",
+        tags: ["optique", "réfraction"]
     },
 
     // --- SECONDE CHIMIE ---
@@ -46,10 +57,32 @@ const formulas = [
         subject: "chimie",
         level: "2nde",
         formula: "\\rho = \\frac{m}{V}",
-        definition: "Masse d'une substance contenue dans une unité de volume donnée.",
-        properties: "Permet de différencier des espèces chimiques (ex: eau = 1000 g/L). Ne pas confondre avec la densité.",
-        units: "ρ(kg/m³ ou g/L), m(kg ou g), V(m³ ou L).",
-        tags: ["matière", "identification"]
+        definition: "Masse d'un litre (ou m³) d'une espèce chimique pure. Indique si l'objet est 'lourd' pour sa taille.",
+        properties: "L'eau pure a une masse volumique de 1000 g/L (ou 1 g/mL).",
+        units: "ρ(g/L ou kg/m³), m(g), V(L).",
+        tags: ["matière", "masse"]
+    },
+    {
+        id: "conc-mass-2",
+        title: "Concentration massique",
+        subject: "chimie",
+        level: "2nde",
+        formula: "C_m = \\frac{m_{soluté}}{V_{solution}}",
+        definition: "Quantité de masse d'un soluté dissoute dans un volume donné de solvant.",
+        properties: "À ne pas confondre avec la masse volumique de la solution elle-même.",
+        units: "Cm(g/L), m(g), V(L).",
+        tags: ["solutions", "chimie"]
+    },
+    {
+        id: "quantite-solide-2",
+        title: "Quantité de matière (n)",
+        subject: "chimie",
+        level: "2nde",
+        formula: "n = \\frac{m}{M}",
+        definition: "Nombre de moles contenues dans un échantillon de masse m.",
+        properties: "La mole est l'unité de comptage des atomes en chimie. M est la masse molaire atomique.",
+        units: "n(mol), m(g), M(g/mol).",
+        tags: ["moles", "matière"]
     },
 
     // --- PREMIÈRE PHYSIQUE ---
@@ -59,21 +92,21 @@ const formulas = [
         subject: "physique",
         level: "1ere",
         formula: "\\frac{1}{\\overline{OA'}} - \\frac{1}{\\overline{OA}} = \\frac{1}{f'} = V",
-        definition: "Lien entre la position de l'objet (A), la position de l'image (A') et la focale de la lentille (f').",
-        properties: "Utilise des mesures algébriques (positives dans le sens de la lumière). f' est la distance focale.",
-        units: "Mesures en mètres (m), V en Dioptries (δ).",
+        definition: "Position de l'image (A') créée par une lentille à partir d'un objet (A).",
+        properties: "Mesures algébriques (négatives si avant la lentille). f' est la focale de la lentille.",
+        units: "Distances en mètres (m), V en Dioptries (δ).",
         tags: ["optique", "lentilles"]
     },
     {
         id: "optique-vergence-1",
-        title: "Vergence d'une lentille",
+        title: "Vergence",
         subject: "physique",
         level: "1ere",
         formula: "V = \\frac{1}{f'}",
-        definition: "Capacité d'une lentille convergente à dévier les rayons lumineux vers son foyer.",
-        properties: "Plus f' est petit, plus la lentille est bombée et plus sa vergence V est grande.",
+        definition: "Capacité d'une lentille à faire converger la lumière vers son foyer.",
+        properties: "Plus f' est petit, plus la vergence V est grande (lentille puissante).",
         units: "V en Dioptries (δ), f' en mètres (m).",
-        tags: ["optique", "vision"]
+        tags: ["vision", "optique"]
     },
     {
         id: "ec-1",
@@ -81,9 +114,9 @@ const formulas = [
         subject: "physique",
         level: "1ere",
         formula: "E_c = \\frac{1}{2} m v^2",
-        definition: "Énergie liée au mouvement d'un système. Elle dépend de sa masse et de sa vitesse.",
-        properties: "Proportionnelle au carré du vecteur vitesse. Si la vitesse double, Ec est multipliée par 4.",
-        units: "Ec(Joules), m(kg), v(m/s).",
+        definition: "Énergie que possède tout objet en mouvement.",
+        properties: "Elle dépend du carré de la vitesse. Toujours positive.",
+        units: "Ec(Joules - J), m(kg), v(m/s).",
         tags: ["énergie", "mouvement"]
     },
     {
@@ -92,56 +125,67 @@ const formulas = [
         subject: "physique",
         level: "1ere",
         formula: "E_{pp} = m \\times g \\times z",
-        definition: "Énergie liée à l'altitude z d'un objet dans le champ de pesanteur terrestre.",
-        properties: "On choisit souvent l'origine des altitudes au niveau du sol (z = 0).",
-        units: "Epp(Joules), m(kg), z(m).",
-        tags: ["énergie", "gravité"]
+        definition: "Énergie liée à l'altitude z d'un objet.",
+        properties: "Augmente avec la hauteur. On fixe souvent z = 0 au sol.",
+        units: "Epp(Joules - J), m(kg), z(m).",
+        tags: ["énergie", "hauteur"]
+    },
+    {
+        id: "ohm-1",
+        title: "Loi d'Ohm",
+        subject: "physique",
+        level: "1ere",
+        formula: "U = R \\times I",
+        definition: "Tension aux bornes d'une résistance traversée par un courant.",
+        properties: "R traduit la résistance au passage du courant (en Ohms).",
+        units: "U(V), R(Ω), I(A).",
+        tags: ["électricité"]
     },
 
     // --- PREMIÈRE CHIMIE ---
     {
-        id: "mole-1",
-        title: "Quantité de matière",
+        id: "conc-mol-1",
+        title: "Concentration molaire",
         subject: "chimie",
         level: "1ere",
-        formula: "n = \\frac{m}{M}",
-        definition: "Nombre de moles contenues dans une masse m d'une espèce chimique de masse molaire M.",
-        properties: "La mole (mol) est l'unité de base pour compter les atomes ou molécules.",
-        units: "n(mol), m(g), M(g/mol).",
-        tags: ["mole", "atome"]
+        formula: "C = \\frac{n}{V}",
+        definition: "Nombre de moles de soluté par litre de solution.",
+        properties: "Lien : Concentration massique Cm = C × M.",
+        units: "C(mol/L), n(mol), V(L).",
+        tags: ["solutions", "molaire"]
     },
     {
         id: "dilution-1",
-        title: "Formule de la dilution",
+        title: "Dilution (Conservation)",
         subject: "chimie",
         level: "1ere",
         formula: "C_i \\times V_i = C_f \\times V_f",
-        definition: "Conservation de la quantité de matière lors de l'ajout d'un solvant.",
-        properties: "i = initial (mère), f = final (fille). On a toujours Ci > Cf et Vi < Vf.",
-        units: "C(mol/L), V(L ou mL).",
-        tags: ["solutions", "préparation"]
+        definition: "La quantité de matière (n) ne change pas quand on rajoute de l'eau.",
+        properties: "i (mère) est plus concentrée que f (fille).",
+        units: "Ci, Cf en mol/L. Vi, Vf en L (ou mL).",
+        tags: ["dosage", "préparation"]
     },
     {
-        id: "facteur-dilution-1",
-        title: "Facteur de dilution",
+        id: "facteur-dil-1",
+        title: "Facteur de dilution (F)",
         subject: "chimie",
         level: "1ere",
-        formula: "F = \\frac{C_i}{C_f} = \\frac{V_f}{V_i}",
+        formula: "F = \\frac{C_{mère}}{C_{fille}} = \\frac{V_{fille}}{V_{mère}}",
         definition: "Nombre de fois qu'une solution a été diluée.",
-        properties: "F est toujours supérieur à 1. Par exemple, si F = 10, on a dilué 10 fois.",
+        properties: "F est toujours > 1. Exemple : F=10 veut dire 1 volume mère pour 9 volumes d'eau.",
         units: "F (sans unité).",
-        tags: ["solutions", "test"]
+        tags: ["dilution", "chimie"]
     },
     {
         id: "equivalence-1",
-        title: "Équivalence au titrage",
+        title: "Équivalence (Titrage)",
         subject: "chimie",
         level: "1ere",
         formula: "\\frac{n_A}{a} = \\frac{n_{versé}}{b}",
-        definition: "État caractéristique d'un titrage où les réactifs ont été introduits dans des proportions stoechiométriques.",
-        properties: "À l'équivalence, il y a un changement de couleur (titrage colorimétrique) ou un saut de pH.",
+        definition: "Moment où les réactifs sont mélangés en proportions stoechiométriques.",
+        properties: "Déterminée par un changement de couleur ou un saut de pH (courbe).",
         units: "n en moles (mol).",
-        tags: ["dosage", "titrage"]
+        tags: ["titrage", "dosage"]
     },
     {
         id: "beer-1",
@@ -149,19 +193,19 @@ const formulas = [
         subject: "chimie",
         level: "1ere",
         formula: "A = \\epsilon \\times l \\times C",
-        definition: "L'absorbance A est proportionnelle à la concentration C de l'espèce colorée.",
-        properties: "Utile pour doser une solution colorée sans la détruire (spectrophotométrie).",
-        units: "A (sans unité), ε(L/mol/cm), l(cm), C(mol/L).",
-        tags: ["dosage", "lumière"]
+        definition: "L'absorbance A dépend de la concentration de l'espèce colorée.",
+        properties: "Valable si la concentration C est faible (diluée). A est sans unité.",
+        units: "A, ε(L/mol/cm), l(cm), C(mol/L).",
+        tags: ["lumière", "spectro"]
     }
 ];
 
-// STATE
+// STATE (GLOBAL)
 let currentFilterLevel = 'all';
 let currentFilterSubject = 'all';
 let currentSearch = '';
 
-// ELEMENTS
+// DOM ELEMENTS
 const listContainer = document.getElementById('formula-list');
 const searchInput = document.getElementById('main-search');
 const levelChips = document.querySelectorAll('.level-chip');
@@ -179,8 +223,9 @@ const closeModalBtn = document.querySelector('.modal-close');
 const tabTriggers = document.querySelectorAll('.tab-trigger');
 const tabPanels = document.querySelectorAll('.tab-panel');
 
-// FUNCTIONS
+// CORE FUNCTIONS
 function render() {
+    if(!listContainer) return;
     listContainer.innerHTML = '';
     
     const filtered = formulas.filter(f => {
@@ -204,7 +249,7 @@ function render() {
                 <h3>${f.title}</h3>
                 <div class="card-eqn">\\[ ${f.formula} \\]</div>
                 <div class="card-footer">
-                    <span>Explorer le concept</span>
+                    <span>Voir Détails</span>
                     <i data-lucide="arrow-right" style="width:16px"></i>
                 </div>
             `;
@@ -248,11 +293,13 @@ function switchTab(tabId) {
     });
 }
 
-// LISTENERS
-searchInput.oninput = (e) => {
-    currentSearch = e.target.value;
-    render();
-};
+// EVENT LISTENERS
+if (searchInput) {
+    searchInput.oninput = (e) => {
+        currentSearch = e.target.value;
+        render();
+    };
+}
 
 levelChips.forEach(chip => {
     chip.onclick = () => {
@@ -272,8 +319,8 @@ subjectChips.forEach(chip => {
     };
 });
 
-closeModalBtn.onclick = closeModal;
-modalOverlay.onclick = (e) => { if (e.target === modalOverlay) closeModal(); };
+if(closeModalBtn) closeModalBtn.onclick = closeModal;
+if(modalOverlay) modalOverlay.onclick = (e) => { if (e.target === modalOverlay) closeModal(); };
 
 tabTriggers.forEach(btn => {
     btn.onclick = () => switchTab(btn.dataset.tab);
