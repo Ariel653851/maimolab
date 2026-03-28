@@ -1,31 +1,38 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ScienForm - Seconde & Première</title>
-    <meta name="description" content="Toutes les définitions et formules de physique-chimie pour les élèves de Seconde et Première.">
+    <meta name="description"
+        content="Toutes les définitions et formules de physique-chimie pour les élèves de Seconde et Première.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
 </head>
+
 <body>
     <div class="app-container">
         <header>
             <div class="header-inner">
                 <div class="brand">
-                    <div class="icon-circle"><i data-lucide="flask-conical"></i></div>
-                    <span>ScienForm</span>
+                    <div class="brand-top">
+                        <div class="icon-circle"><i data-lucide="flask-conical"></i></div>
+                        <span>ScienForm</span>
+                    </div>
+                    <span class="directed-by">Directed by Ariel Koskas</span>
                 </div>
                 <div class="search-wrap">
                     <i data-lucide="search"></i>
                     <input type="text" id="main-search" placeholder="Réviser une formule ou un concept...">
                 </div>
             </div>
-            
+
             <div class="filter-bar">
                 <div class="level-selectors">
                     <button class="level-chip active" data-level="all">Tous</button>
@@ -57,13 +64,13 @@
                 <span class="modal-badge" id="modal-tag">PHYSIQUE</span>
                 <h2 id="modal-title">Titre de la formule</h2>
             </div>
-            
+
             <div class="modal-tabs">
                 <button class="tab-trigger active" data-tab="eqn">Formule</button>
                 <button class="tab-trigger" data-tab="def">Définition</button>
                 <button class="tab-trigger" data-tab="prop">Propriétés</button>
             </div>
-            
+
             <div class="modal-body-content">
                 <div class="tab-panel active" id="tab-eqn">
                     <div class="math-display" id="math-box">\[ P = m \times g \]</div>
@@ -89,4 +96,5 @@
     <script src="script.js"></script>
     <script>lucide.createIcons();</script>
 </body>
+
 </html>
