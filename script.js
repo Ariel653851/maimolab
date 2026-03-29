@@ -1,6 +1,6 @@
 /**
- * SCIENFORM V2.3 - SCRIPT.JS
- * THE ULTIMATE VERSION WITH DETAILED LEGENDS (SYMBOLS + NAMES + UNITS)
+ * SCIENFORM V2.4 - SCRIPT.JS
+ * REVERTED TO DETAILED LEGEND VERSION (BEST STABILITY)
  */
 
 const formulas = [
@@ -208,24 +208,20 @@ function render() {
         noResults.classList.add('hidden');
         filtered.forEach(f => {
             const card = document.createElement('div');
-            card.className = 'formula-card diagram-mode';
+            card.className = 'formula-card bottom-diagram';
             
-            // LEGEND LOGIC: Create callouts for diagram
-            // We'll place up to 3 callouts around the formula
+            // LEGEND LOGIC: Bottom callouts
             const unitList = f.units ? f.units.split(',') : [];
-            const calloutsHtml = unitList.map((u, i) => {
+            const calloutsHtml = unitList.map((u) => {
                 const parts = u.trim().split('(');
                 const desc = parts[0].trim(); // Symbole [Nom]
                 const unit = parts[1] ? parts[1].replace(')', '') : '';
-                const posClass = i === 0 ? 'top-left' : (i === 1 ? 'top-right' : 'bottom-right');
                 
                 return `
-                    <div class="callout ${posClass}">
-                        <div class="callout-text">
-                            <strong>${desc}</strong>
-                            <span>en ${unit}</span>
-                        </div>
-                        <div class="arrow"></div>
+                    <div class="unit-pill">
+                        <span class="pill-sym">${desc}</span>
+                        <span class="pill-arrow">↑</span>
+                        <span class="pill-unit">${unit}</span>
                     </div>
                 `;
             }).join('');
@@ -233,12 +229,12 @@ function render() {
             card.innerHTML = `
                 <span class="card-tag ${f.subject}">${f.subject.toUpperCase()} • ${f.level}</span>
                 <h3>${f.title}</h3>
-                <div class="diagram-area">
-                    <div class="card-eqn">\\[ ${f.formula} \\]</div>
+                <div class="card-eqn">\\[ ${f.formula} \\]</div>
+                <div class="bottom-legend-area">
                     ${calloutsHtml}
                 </div>
                 <div class="card-footer">
-                    <span>Voir Définition & Propriétés</span>
+                    <span>Voir plus</span>
                     <i data-lucide="arrow-right" style="width:16px"></i>
                 </div>
             `;

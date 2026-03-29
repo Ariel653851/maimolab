@@ -199,35 +199,42 @@ header {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 1.5rem;
-    margin: 1rem 0;
-    padding-top: 1rem;
-    border-top: 1px dotted var(--border);
+    gap: 0.6rem;
+    margin: 1.25rem 0;
 }
 
-.bottom-callout {
+.unit-pill {
+    background: #f1f5f9;
+    border-radius: 20px;
+    padding: 0.4rem 0.75rem;
     display: flex;
-    flex-direction: column;
     align-items: center;
-    text-align: center;
+    gap: 0.4rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    border: 1px solid var(--border);
+    transition: all 0.2s;
 }
 
-.up-arrow {
+.unit-pill:hover {
+    background: var(--primary-soft);
+    border-color: var(--primary);
+    transform: scale(1.03);
+}
+
+.pill-sym {
+    color: var(--text);
+}
+
+.pill-arrow {
     color: var(--primary);
     font-weight: 800;
-    font-size: 1.25rem;
-    margin-bottom: -0.2rem;
+    font-size: 0.9rem;
 }
 
-.callout-text strong {
-    display: block;
-    font-size: 0.85rem;
-}
-
-.callout-text span {
-    font-size: 0.78rem;
+.pill-unit {
     color: var(--primary);
-    font-weight: 600;
+    opacity: 0.9;
 }
 
 .card-footer {
