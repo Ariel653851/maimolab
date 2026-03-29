@@ -244,10 +244,16 @@ function render() {
         filtered.forEach(f => {
             const card = document.createElement('div');
             card.className = 'formula-card';
+            
+            // Format units for the quick card view
+            // e.g. "P(N), m(kg), g(N/kg)" -> "P → N | m → kg | g → N/kg"
+            const quickUnits = f.units ? f.units.replace(/\(/g, ' → ').replace(/\)/g, '').replace(/,/g, ' |') : "";
+
             card.innerHTML = `
                 <span class="card-tag ${f.subject}">${f.subject.toUpperCase()} • ${f.level}</span>
                 <h3>${f.title}</h3>
                 <div class="card-eqn">\\[ ${f.formula} \\]</div>
+                <div class="card-quick-units">${quickUnits}</div>
                 <div class="card-footer">
                     <span>Voir Détails</span>
                     <i data-lucide="arrow-right" style="width:16px"></i>
