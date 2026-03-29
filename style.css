@@ -92,25 +92,28 @@ header {
 
 /* SEARCH & FILTERS */
 .search-wrap {
-    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem; /* Espace entre la loupe et la barre */
     flex: 1;
     min-width: 300px;
 }
 
 .search-wrap i {
-    position: absolute;
-    left: 1rem;
-    top: 50%;
-    transform: translateY(-50%);
     color: var(--text-muted);
+    opacity: 0.6;
+    flex-shrink: 0;
+    width: 16px !important; /* LOUPE PLUS PETITE */
+    height: 16px !important;
 }
 
 .search-wrap input {
     width: 100%;
-    padding: 0.85rem 1rem 0.85rem 3rem;
+    padding: 0.75rem 1rem; /* Padding réduit (loupe sortie) */
     border: 1px solid var(--border);
     border-radius: var(--radius-sm);
-    font-size: 1rem;
+    font-size: 0.95rem;
+    background: white;
     transition: all 0.2s;
 }
 
