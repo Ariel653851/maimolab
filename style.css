@@ -7,6 +7,8 @@
 
 :root {
     --primary: #2563eb;
+    --physique: #2563eb;
+    --chimie: #059669;
     --primary-soft: #eff6ff;
     --secondary: #64748b;
     --bg: #f8fafc;
@@ -177,8 +179,8 @@ header {
     margin-bottom: 0.75rem;
 }
 
-.card-tag.physique { background: #fee2e2; color: #991b1b; }
-.card-tag.chimie { background: #fef9c3; color: #854d0e; }
+.card-tag.physique { background: #dbeafe; color: #1e40af; }
+.card-tag.chimie { background: #d1fae5; color: #065f46; }
 
 .formula-card h3 {
     font-size: 1.15rem;
@@ -204,7 +206,7 @@ header {
 }
 
 .unit-pill {
-    background: #f1f5f9;
+    background: #f8fafc;
     border-radius: 20px;
     padding: 0.4rem 0.75rem;
     display: flex;
@@ -213,28 +215,21 @@ header {
     font-size: 0.8rem;
     font-weight: 600;
     border: 1px solid var(--border);
-    transition: all 0.2s;
 }
+
+/* Color adaptation based on parent card subject */
+.formula-card.physique .unit-pill { border-color: #bfdbfe; }
+.formula-card.chimie .unit-pill { border-color: #a7f3d0; }
+
+.formula-card.physique .pill-arrow, .formula-card.physique .pill-unit { color: var(--physique); }
+.formula-card.chimie .pill-arrow, .formula-card.chimie .pill-unit { color: var(--chimie); }
+
+.formula-card.physique .card-footer { color: var(--physique); }
+.formula-card.chimie .card-footer { color: var(--chimie); }
 
 .unit-pill:hover {
-    background: var(--primary-soft);
-    border-color: var(--primary);
+    background: white;
     transform: scale(1.03);
-}
-
-.pill-sym {
-    color: var(--text);
-}
-
-.pill-arrow {
-    color: var(--primary);
-    font-weight: 800;
-    font-size: 0.9rem;
-}
-
-.pill-unit {
-    color: var(--primary);
-    opacity: 0.9;
 }
 
 .card-footer {
@@ -270,6 +265,18 @@ header {
     padding: 2.5rem;
     overflow-y: auto;
 }
+
+.modal-window.physique { border-top: 6px solid var(--physique); }
+.modal-window.chimie { border-top: 6px solid var(--chimie); }
+
+.modal-window.physique .tab-trigger.active { color: var(--physique); }
+.modal-window.chimie .tab-trigger.active { color: var(--chimie); }
+
+.modal-window.physique .tab-trigger.active::after { background: var(--physique); }
+.modal-window.chimie .tab-trigger.active::after { background: var(--chimie); }
+
+.modal-window.physique .units-legend p { color: var(--physique); }
+.modal-window.chimie .units-legend p { color: var(--chimie); }
 
 .modal-close {
     position: absolute;

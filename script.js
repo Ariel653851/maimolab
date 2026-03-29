@@ -208,7 +208,7 @@ function render() {
         noResults.classList.add('hidden');
         filtered.forEach(f => {
             const card = document.createElement('div');
-            card.className = 'formula-card bottom-diagram';
+            card.className = `formula-card bottom-diagram ${f.subject}`;
             
             // LEGEND LOGIC: Bottom callouts
             const unitList = f.units ? f.units.split(',') : [];
@@ -248,6 +248,9 @@ function render() {
 }
 
 function openModal(f) {
+    const modalWindow = document.querySelector('.modal-window');
+    modalWindow.className = `modal-window glass ${f.subject}`;
+
     modalTitle.textContent = f.title;
     modalTag.textContent = `${f.subject.toUpperCase()} • ${f.level}`;
     modalTag.className = `modal-badge ${f.subject}`;
